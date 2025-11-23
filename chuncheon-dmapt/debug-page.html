@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
+<link rel="stylesheet" href="/css/slick.css?date=2024114550" />
+<link rel="stylesheet" href="/css/slick-theme.css?date=2024114550" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="//unpkg.com/aos@next/dist/aos.css" />
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/js/gnb.js"></script>
+<script src="/js/vis_.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+<script src="/js/slick.js"></script>
+<script src="/board/js/common.js"></script>
+<script src="/js/aos.js"></script>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>관심고객관리 | 춘천 동문 디 이스트</title>
+<link rel="stylesheet" href="http://www.chuncheon-dmapt.co.kr/board/adm/css/admin.css?ver=191202">
+<link rel="stylesheet" href="http://www.chuncheon-dmapt.co.kr/board/js/font-awesome/css/font-awesome.min.css?ver=191202">
+<!--[if lte IE 8]>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://www.chuncheon-dmapt.co.kr/board";
+var g5_bbs_url   = "http://www.chuncheon-dmapt.co.kr/board/bbs";
+var g5_is_member = "1";
+var g5_is_admin  = "super";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+var g5_admin_url = "http://www.chuncheon-dmapt.co.kr/board/adm";
+</script>
+
+<style>
+html {overflow-y:scroll}
+body {margin:0;padding:0;font-size:1.2em;font-family:'Malgun Gothic', dotum, sans-serif;background:#fff}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:'Malgun Gothic', dotum, sans-serif}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+
+ul, dl,dt,dd {margin:0;padding:0;list-style:none}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select, img {vertical-align:middle;font-size:1em}
+input, button {margin:0;padding:0;font-family:'Malgun Gothic', dotum, sans-serif;font-size:1em}
+input[type="submit"] {cursor:pointer}
+button {cursor:pointer}
+
+textarea, select {font-family:'Malgun Gothic', dotum, sans-serif;font-size:1em}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a {color:#000;text-decoration:none}
+
+*, :after, :before {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+input[type=text],input[type=password], textarea {
+-webkit-transition:all 0.30s ease-in-out;
+-moz-transition:all 0.30s ease-in-out;
+-ms-transition:all 0.30s ease-in-out;
+-o-transition:all 0.30s ease-in-out;
+outline:none;
+}
+
+input[type=text]:focus,input[type=password]:focus, textarea:focus,select:focus {
+-webkit-box-shadow:0 0 5px #9ed4ff;
+-moz-box-shadow:0 0 5px #9ed4ff;
+box-shadow:0 0 5px #9ed4ff;
+border:1px solid #558ab7 !important;
+}
+</style>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/jquery-1.12.4.min.js?ver=191202"></script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/jquery-migrate-1.4.1.min.js?ver=191202"></script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/jquery.menu.js?ver=191202"></script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/common.js?ver=191202"></script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/wrest.js?ver=191202"></script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/placeholders.min.js?ver=191202"></script>
+</head>
+<body >
+<script>
+    var g5_admin_csrf_token_key = "153398b8ec4b8122d9d8d84be56b429c";
+    var tempX = 0;
+    var tempY = 0;
+
+    function imageview(id, w, h) {
+
+        menu(id);
+
+        var el_id = document.getElementById(id);
+
+        //submenu = eval(name+".style");
+        submenu = el_id.style;
+        submenu.left = tempX - (w + 11);
+        submenu.top = tempY - (h / 2);
+
+        selectBoxVisible();
+
+        if (el_id.style.display != 'none')
+            selectBoxHidden(id);
+    }
+</script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/adm/js/common.js?ver=1.0.0"></script>
+<script src="https://kit.fontawesome.com/3a2e566044.js" crossorigin="anonymous"></script>
+
+<div id="to_content"><a href="#container">본문 바로가기</a></div>
+<div id="tnb">
+    <div id="hd_top">
+        <button type="button" id="btn_gnb" class="btn_gnb_close "><span class="blind">메뉴</span></button>
+        <div id="logo"><a href="http://www.chuncheon-dmapt.co.kr/board/adm/"><img src="http://www.chuncheon-dmapt.co.kr/board/adm/img/logo.png" alt="춘천 동문 디 이스트 관리자"></a></div>
+    </div>
+
+    <ul>
+                <li class="tnb_li"><a href="http://www.chuncheon-dmapt.co.kr/board/" class="tnb_community" target="_blank" title="커뮤니티 바로가기"><span class="blind">커뮤니티 바로가기</span></a></li>
+        
+        <li class="tnb_li"><button type="button" class="tnb_mb_btn">관리자<span class="./img/btn_gnb.png">메뉴열기</span></button>
+            <ul class="tnb_mb_area">
+                <li><a href="http://www.chuncheon-dmapt.co.kr/board/adm/member_form.php?w=u&amp;mb_id=admin">관리자정보</a></li>
+                <li id="tnb_logout"><a href="http://www.chuncheon-dmapt.co.kr/board/bbs/logout.php">로그아웃</a></li>
+            </ul>
+        </li>
+        <li class="tnb_li">
+        <button type="button" class="darkmode-toggle-switch">
+            <i class="fa-solid fa-moon visible bright"></i>
+            <i class="fa-solid fa-sun visible dark"></i>
+        </button>
+        </li>
+    </ul>
+</div>
+
+<div id="wrapper">
+    <!--header id="hd" -->
+        <!--nav id="gnb_wrapper" class="gnb_large "-->
+    <header id="hd" class="">
+        <nav id="gnb_wrapper" class="gnb_large">
+            <ul id="gnb" class="">
+                <style>
+                @media (max-width:1100px) {
+
+                    /* 이 곳에 위치해야 하는 코드입니다. */
+                    
+                    .gnb_li:nth-child(2) .gnb_btn {
+                        margin:0 0 0 56px;
+                    }
+                    
+                    .gnb_li:nth-child(3) .gnb_btn {
+                        margin:0 0 0 112px;
+                    }
+                    
+                    .gnb_li:nth-child(4) .gnb_btn {
+                        margin:0 0 0 168px;
+                    }
+                    
+                    .gnb_li:nth-child(5) .gnb_btn {
+                        margin:0 0 0 224px;
+                    }
+                    
+                    .gnb_li:nth-child(6) .gnb_btn {
+                        margin:0 0 0 280px;
+                    }
+                    
+                    .gnb_li:nth-child(7) .gnb_btn {
+                        margin:0 0 0 336px;
+                    }
+                    
+                    .gnb_li:nth-child(8) .gnb_btn {
+                        margin:0 0 0 392px;
+                    }
+                    
+                    .gnb_li:nth-child(9) .gnb_btn {
+                        margin:0 0 0 448px;
+                    }
+                }
+            </style>
+                                <li class="gnb_li">
+                    <button type="button" class="gnb_btn menu_100 menu_order_1" title="환경설정">
+                        <span class="blind_mo">환경설정</span>
+                    </button>
+                    <ul class="gnb_sub">                    
+                        <li class="gnb_sub_li ">
+                            <ul><li data-menu="100310"><a href="http://www.chuncheon-dmapt.co.kr/board/adm/newwinlist.php" class="gnb_sub_link  ">팝업레이어관리</a></li></ul>                        </li>                    
+                    </ul>                    
+                </li>
+                            <li class="gnb_li">
+                    <button type="button" class="gnb_btn menu_200 menu_order_2" title="접속자관리">
+                        <span class="blind_mo">접속자관리</span>
+                    </button>
+                    <ul class="gnb_sub">                    
+                        <li class="gnb_sub_li ">
+                            <ul><li data-menu="200800"><a href="http://www.chuncheon-dmapt.co.kr/board/adm/visit_date.php" class="gnb_sub_link gnb_grp_style gnb_grp_div">접속자집계</a></li><li data-menu="200810"><a href="http://www.chuncheon-dmapt.co.kr/board/adm/visit_search.php" class="gnb_sub_link gnb_grp_style gnb_grp_div">접속자검색</a></li></ul>                        </li>                    
+                    </ul>                    
+                </li>
+                            <li class="gnb_li">
+                    <button type="button" class="gnb_btn menu_300 menu_order_3" title="게시판관리">
+                        <span class="blind_mo">게시판관리</span>
+                    </button>
+                    <ul class="gnb_sub">                    
+                        <li class="gnb_sub_li ">
+                            <ul><li data-menu="300100"><a href="http://www.chuncheon-dmapt.co.kr/board/adm/board_list.php" class="gnb_sub_link  ">게시판관리</a></li></ul>                        </li>                    
+                    </ul>                    
+                </li>
+                            <li class="gnb_li on">
+                    <button type="button" class="gnb_btn menu_600 menu_order_4" title="관심고객등록" onclick="location.href='http://www.chuncheon-dmapt.co.kr/board/adm/interest_list.php'">
+                        <span class="blind_mo">관심고객등록</span>
+                    </button>
+                </li>
+                                <li class="gnb_li">
+                    <button type="button" class="gnb_btn menu_700 menu_order_5" title="입시설명회 방문예약" onclick="location.href='http://www.chuncheon-dmapt.co.kr/board/adm/visit_reservation_session_list.php'">
+                        <span class="blind_mo">입시설명회 방문예약</span>
+                    </button>
+                </li>
+                                <li class="gnb_li">
+                    <button type="button" class="gnb_btn menu_800 menu_order_6" title="84타입 선착순 순번추첨" onclick="location.href='http://www.chuncheon-dmapt.co.kr/board/adm/visit_reservation_drawing_list.php'">
+                        <span class="blind_mo">84타입 선착순 순번추첨</span>
+                    </button>
+                </li>
+                        </ul>
+    </nav>
+</header>
+
+<script>
+    jQuery(function($) {
+        const menu_cookie_key = 'g5_admin_btn_gnb';
+
+        $(".tnb_mb_btn").click(function() {
+            $(".tnb_mb_area").toggle();
+        });
+
+        $("#btn_gnb").click(function() {
+            var $this = $(this);
+
+            try {
+                if (!$this.hasClass("btn_gnb_open")) {
+                    set_cookie(menu_cookie_key, 1, 60 * 60 * 24 * 365);
+                } else {
+                    delete_cookie(menu_cookie_key);
+                }
+            } catch (err) {}
+
+            $("#hd").toggleClass("hd_small");
+            $("#container").toggleClass("container-small");
+            $("#gnb").toggleClass("gnb_small");
+            $this.toggleClass("btn_gnb_open");
+
+        });
+
+        $("#gnb .gnb_btn").click(function() {
+            $(".gnb_li").removeClass("on");
+            $(this).parents(".gnb_li").addClass("on");
+        });
+    });
+</script>
+
+<div id="container" class="">
+    <h1 id="container_title" class="container_title top">관심고객관리</h1>
+        <div class="container_wr top">
+<div class="local_ov01 local_ov">
+    <a href="/board/adm/interest_list.php" class="ov_listall">전체목록</a>    <span class="btn_ov01"><span class="ov_txt">총 등록건수 </span><span class="ov_num"> 757명 </span></span>
+</div>
+
+<form id="fsearch" name="fsearch" class="local_sch01 local_sch" method="get">
+<label for="sfl" class="sound_only">검색대상</label>
+<select name="sfl" id="sfl">
+    <option value="name">이름</option>
+    <option value="joinday">가입일시</option>
+    <option value="ip">IP</option>
+</select>
+<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+<input type="text" name="stx" value="" id="stx" required class="required frm_input">
+<input type="submit" class="btn_submit" value="검색">
+</form>
+
+<form name="finterestlist" id="finterestlist" action="./interest_list_update.php" onsubmit="return finterestlist_submit(this);" method="post">
+<input type="hidden" name="sst" value="joinday">
+<input type="hidden" name="sod" value="desc">
+<input type="hidden" name="sfl" value="">
+<input type="hidden" name="stx" value="">
+<input type="hidden" name="page" value="1">
+<input type="hidden" name="token" value="">
+
+<div class="tbl_head01 tbl_wrap">
+   <table>
+    <caption>관심고객관리 목록</caption>
+	
+	<colgroup>
+		<col width="50px" />
+		<col width="90px" />
+		<col width="120px" />
+		<col width="*" />
+		<col width="150px" />
+		<col width="150px" />
+		<col width="120px" />
+		<col width="100px" />
+		<col width="140px" />
+		<col width="150px" />
+	</colgroup>
+    <thead>
+    <tr>
+        <th scope="col">
+            <label for="chkall" class="sound_only">전체</label>
+            <input type="checkbox" name="chkall" value="1" id="chkall" onclick="check_all(this.form)">
+        </th>
+        <th scope="col">이름</a></th>
+        <th scope="col">연락처</a></th>
+        <th scope="col">주소</a></th>
+        <th scope="col">개인정보동의</a></th>
+		<th scope="col">개인정보취급동의</a></th>
+        <th scope="col">SMS 동의</th>
+        <th scope="col">ip</th>
+        <th scope="col">등록일</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[0]" value="765" id="no_0">
+        
+        <input type="checkbox" name="chk[]" value="0" id="chk_0"></td>
+      <td headers="mb_list">김기덕</td>
+      <td headers="mb_list">
+		010-3673-6039      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;강남동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">223.39.211.100</td>
+      <td headers="mb_list">2025-11-23 11:15:59</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[1]" value="764" id="no_1">
+        
+        <input type="checkbox" name="chk[]" value="1" id="chk_1"></td>
+      <td headers="mb_list">안학선</td>
+      <td headers="mb_list">
+		010-9289-4367      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;양구군&nbsp;      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">X</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">119.205.115.38</td>
+      <td headers="mb_list">2025-11-22 12:30:48</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[2]" value="763" id="no_2">
+        
+        <input type="checkbox" name="chk[]" value="2" id="chk_2"></td>
+      <td headers="mb_list">김세현</td>
+      <td headers="mb_list">
+		010-7531-4179      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;퇴계동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">X</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">117.111.6.217</td>
+      <td headers="mb_list">2025-11-21 14:53:45</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[3]" value="762" id="no_3">
+        
+        <input type="checkbox" name="chk[]" value="3" id="chk_3"></td>
+      <td headers="mb_list">정화영</td>
+      <td headers="mb_list">
+		010-7111-6765      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(서울특별시)&nbsp;강동구&nbsp;강일동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">1.233.88.165</td>
+      <td headers="mb_list">2025-11-21 12:37:04</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[4]" value="761" id="no_4">
+        
+        <input type="checkbox" name="chk[]" value="4" id="chk_4"></td>
+      <td headers="mb_list">김샛별</td>
+      <td headers="mb_list">
+		010-9754-6279      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;홍천군&nbsp;홍천읍      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">X</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">121.155.65.210</td>
+      <td headers="mb_list">2025-11-21 11:57:35</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[5]" value="760" id="no_5">
+        
+        <input type="checkbox" name="chk[]" value="5" id="chk_5"></td>
+      <td headers="mb_list">이현진</td>
+      <td headers="mb_list">
+		010-8290-6554      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;신사우동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">X</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">210.183.249.53</td>
+      <td headers="mb_list">2025-11-21 10:42:33</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[6]" value="759" id="no_6">
+        
+        <input type="checkbox" name="chk[]" value="6" id="chk_6"></td>
+      <td headers="mb_list">이한미</td>
+      <td headers="mb_list">
+		010-4735-2980      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;동내면      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">X</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">211.32.134.234</td>
+      <td headers="mb_list">2025-11-21 10:40:10</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[7]" value="758" id="no_7">
+        
+        <input type="checkbox" name="chk[]" value="7" id="chk_7"></td>
+      <td headers="mb_list">이지혜</td>
+      <td headers="mb_list">
+		010-3524-6186      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;신사우동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">58.122.255.214</td>
+      <td headers="mb_list">2025-11-21 10:25:00</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[8]" value="757" id="no_8">
+        
+        <input type="checkbox" name="chk[]" value="8" id="chk_8"></td>
+      <td headers="mb_list">오지환</td>
+      <td headers="mb_list">
+		010-4911-7680      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;퇴계동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">X</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">39.7.52.1</td>
+      <td headers="mb_list">2025-11-21 10:17:49</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[9]" value="756" id="no_9">
+        
+        <input type="checkbox" name="chk[]" value="9" id="chk_9"></td>
+      <td headers="mb_list">연주희</td>
+      <td headers="mb_list">
+		010-7921-0316      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;효자2동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">X</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">121.189.160.23</td>
+      <td headers="mb_list">2025-11-21 10:07:42</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[10]" value="755" id="no_10">
+        
+        <input type="checkbox" name="chk[]" value="10" id="chk_10"></td>
+      <td headers="mb_list">이현주</td>
+      <td headers="mb_list">
+		010-8790-6405      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(경기도)&nbsp;하남시&nbsp;미사1동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">1.224.243.126</td>
+      <td headers="mb_list">2025-11-20 06:35:34</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[11]" value="754" id="no_11">
+        
+        <input type="checkbox" name="chk[]" value="11" id="chk_11"></td>
+      <td headers="mb_list">전은미</td>
+      <td headers="mb_list">
+		010-6312-8794      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;교동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">X</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">114.70.123.35</td>
+      <td headers="mb_list">2025-11-11 10:30:02</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[12]" value="753" id="no_12">
+        
+        <input type="checkbox" name="chk[]" value="12" id="chk_12"></td>
+      <td headers="mb_list">김은순</td>
+      <td headers="mb_list">
+		010-8847-1329      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(강원특별자치도)&nbsp;춘천시&nbsp;퇴계동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">121.132.165.22</td>
+      <td headers="mb_list">2025-11-10 10:10:09</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg1">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[13]" value="752" id="no_13">
+        
+        <input type="checkbox" name="chk[]" value="13" id="chk_13"></td>
+      <td headers="mb_list">박소현</td>
+      <td headers="mb_list">
+		010-3384-2389      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		(경기도)&nbsp;구리시&nbsp;교문1동      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">X</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">211.212.164.40</td>
+      <td headers="mb_list">2025-11-06 10:34:01</td>
+    </tr>
+    <!--tr class="bg1">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg1">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+    
+    <tr class="bg0">
+      <td class="td_chk" headers="mb_list_chk">
+        <input type="hidden" name="no[14]" value="751" id="no_14">
+        
+        <input type="checkbox" name="chk[]" value="14" id="chk_14"></td>
+      <td headers="mb_list">김명석</td>
+      <td headers="mb_list">
+		010-9134-1616      </td>
+      <!-- <td headers="mb_list" class="td_left">
+      		      </td> -->
+      <td headers="mb_list" class="td_left">
+		()&nbsp;&nbsp;      </td>
+      <td headers="mb_list">O</td>
+	  <td headers="mb_list">O</td>
+      <td headers="mb_list">O</td>
+      <!-- <td headers="mb_list" colspan='2'>X</td> -->
+      <td headers="mb_list">14.54.94.91</td>
+      <td headers="mb_list">2025-11-03 21:54:31</td>
+    </tr>
+    <!--tr class="bg0">
+      <td headers="mb_list"></td>
+      <td headers="mb_list"q>				  </td>
+      <td headers="mb_list" class="td_left"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+      <td headers="mb_list"></td>
+	  <td headers="mb_list"></td>
+      </tr-->
+    <!--tr class="bg0">
+        <td colspan="8" headers="mb_list" class="td_left"></td>
+      </tr-->
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="btn_fixed_top">
+    <input type="submit" name="act_button" value="선택삭제" onclick="document.pressed=this.value" class="btn btn_02">
+    <a href="interest_list_download.php" class="btn btn_01">다운로드</a>
+</div>
+
+
+</form>
+
+<nav class="pg_wrap"><span class="pg"><span class="sound_only">열린</span><strong class="pg_current">1</strong><span class="sound_only">페이지</span>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=2" class="pg_page">2<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=3" class="pg_page">3<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=4" class="pg_page">4<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=5" class="pg_page">5<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=6" class="pg_page">6<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=7" class="pg_page">7<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=8" class="pg_page">8<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=9" class="pg_page">9<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=10" class="pg_page">10<span class="sound_only">페이지</span></a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=11" class="pg_page pg_next">다음</a>
+<a href="?sst=&amp;sod=&amp;sfl=&amp;stx=&amp;page=51" class="pg_page pg_end">맨끝</a>
+</span></nav>
+<script>
+function finterestlist_submit(f)
+{
+    if (!is_checked("chk[]")) {
+        alert(document.pressed+" 하실 항목을 하나 이상 선택하세요.");
+        return false;
+    }
+
+    if(document.pressed == "선택삭제") {
+        if(!confirm("선택한 자료를 정말 삭제하시겠습니까?")) {
+            return false;
+        }
+    }
+
+    return true;
+}
+</script>
+<style>
+.sound_only {
+    display: none;
+}
+
+.pg_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pg {
+    display: flex;
+    gap: 5px;
+}
+
+.pg a, .pg strong {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #3d4250; /* 기본 텍스트 색상 */
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pg a:hover {
+    background-color: #3d4250; /* 호버 시 배경색 */
+    color: #fff; /* 호버 시 텍스트 색상 */
+    border-color: #3d4250;
+}
+
+.pg strong {
+    background-color: #3d4250; /* 현재 페이지 배경색 */
+    color: #fff; /* 현재 페이지 텍스트 색상 */
+    border-color: #3d4250;
+    font-weight: bold;
+}
+
+.pg a.pg_next, .pg a.pg_end {
+    font-weight: bold;
+    color: #3d4250; /* "다음"과 "맨끝" 링크 기본 색상 */
+}
+
+.pg a.pg_next:hover, .pg a.pg_end:hover {
+    background-color: #2c313d; /* "다음"과 "맨끝" 링크 호버 시 배경색 */
+    color: #fff; /* 호버 시 텍스트 색상 */
+    border-color: #2c313d;
+}
+</style>
+
+<noscript>
+    <p>
+        귀하께서 사용하시는 브라우저는 현재 <strong>자바스크립트를 사용하지 않음</strong>으로 설정되어 있습니다.<br>
+        <strong>자바스크립트를 사용하지 않음</strong>으로 설정하신 경우는 수정이나 삭제시 별도의 경고창이 나오지 않으므로 이점 주의하시기 바랍니다.
+    </p>
+</noscript>
+
+</div>
+<footer id="ft">
+    <p>
+        Copyright &copy; www.chuncheon-dmapt.co.kr. All rights reserved. Version 5.4.2.7<br>
+        <button type="button" class="scroll_top"><span class="top_img"></span><span class="top_txt">TOP</span></button>
+    </p>
+</footer>
+</div>
+
+</div>
+
+<script>
+    $(".scroll_top").click(function() {
+        $("body,html").animate({
+            scrollTop: 0
+        }, 400);
+    })
+</script>
+
+<!-- <p>실행시간 : 0.001068115234375 -->
+
+<script src="http://www.chuncheon-dmapt.co.kr/board/adm/admin.js?ver=191202"></script>
+<script src="http://www.chuncheon-dmapt.co.kr/board/js/jquery.anchorScroll.js?ver=191202"></script>
+<script>
+    $(function() {
+
+        var admin_head_height = $("#hd_top").height() + $("#container_title").height() + 5;
+
+        $("a[href^='#']").anchorScroll({
+            scrollSpeed: 0, // scroll speed
+            offsetTop: admin_head_height, // offset for fixed top bars (defaults to 0)
+            onScroll: function() {
+                // callback on scroll start
+            },
+            scrollEnd: function() {
+                // callback on scroll end
+            }
+        });
+
+        var hide_menu = false;
+        var mouse_event = false;
+        var oldX = oldY = 0;
+
+        $(document).mousemove(function(e) {
+            if (oldX == 0) {
+                oldX = e.pageX;
+                oldY = e.pageY;
+            }
+
+            if (oldX != e.pageX || oldY != e.pageY) {
+                mouse_event = true;
+            }
+        });
+
+        // 주메뉴
+        var $gnb = $(".gnb_1dli > a");
+        $gnb.mouseover(function() {
+            if (mouse_event) {
+                $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+                $(this).parent().addClass("gnb_1dli_over gnb_1dli_on");
+                menu_rearrange($(this).parent());
+                hide_menu = false;
+            }
+        });
+
+        $gnb.mouseout(function() {
+            hide_menu = true;
+        });
+
+        $(".gnb_2dli").mouseover(function() {
+            hide_menu = false;
+        });
+
+        $(".gnb_2dli").mouseout(function() {
+            hide_menu = true;
+        });
+
+        $gnb.focusin(function() {
+            $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+            $(this).parent().addClass("gnb_1dli_over gnb_1dli_on");
+            menu_rearrange($(this).parent());
+            hide_menu = false;
+        });
+
+        $gnb.focusout(function() {
+            hide_menu = true;
+        });
+
+        $(".gnb_2da").focusin(function() {
+            $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+            var $gnb_li = $(this).closest(".gnb_1dli").addClass("gnb_1dli_over gnb_1dli_on");
+            menu_rearrange($(this).closest(".gnb_1dli"));
+            hide_menu = false;
+        });
+
+        $(".gnb_2da").focusout(function() {
+            hide_menu = true;
+        });
+
+        $('#gnb_1dul>li').bind('mouseleave', function() {
+            submenu_hide();
+        });
+
+        $(document).bind('click focusin', function() {
+            if (hide_menu) {
+                submenu_hide();
+            }
+        });
+
+        // 폰트 리사이즈 쿠키있으면 실행
+        var font_resize_act = get_cookie("ck_font_resize_act");
+        if (font_resize_act != "") {
+            font_resize("container", font_resize_act);
+        }
+    });
+
+    function submenu_hide() {
+        $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+    }
+
+    function menu_rearrange(el) {
+        var width = $("#gnb_1dul").width();
+        var left = w1 = w2 = 0;
+        var idx = $(".gnb_1dli").index(el);
+
+        for (i = 0; i <= idx; i++) {
+            w1 = $(".gnb_1dli:eq(" + i + ")").outerWidth();
+            w2 = $(".gnb_2dli > a:eq(" + i + ")").outerWidth(true);
+
+            if ((left + w2) > width) {
+                el.removeClass("gnb_1dli_over").addClass("gnb_1dli_over2");
+            }
+
+            left += w1;
+        }
+    }
+</script>
+
+
+<!-- <div style='float:left; text-align:center;'>RUN TIME : 0.0011639595031738<br></div> -->
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+
+</body>
+</html>
