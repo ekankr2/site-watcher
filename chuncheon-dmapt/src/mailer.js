@@ -1,15 +1,9 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export class Mailer {
   constructor() {
-    this.transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
-
+    this.resend = new Resend(process.env.RESEND_API_KEY);
+    this.fromEmail = process.env.FROM_EMAIL;
     this.toEmail = process.env.TO_EMAIL || 'as9611142@naver.com';
   }
 
@@ -65,16 +59,19 @@ ${newPosts.map(post => `
     try {
       console.log(`Sending email to ${this.toEmail}...`);
 
-      const info = await this.transporter.sendMail({
-        from: `"춘천 동문 디 이스트 알림이" <${process.env.GMAIL_USER}>`,
-        to: this.toEmail,
+      const { data, error } = await this.resend.emails.send({
+        from: `춘천 동문 디 이스트 알림이 <${this.fromEmail}>`,
+        to: [this.toEmail],
         subject: subject,
-        text: textContent,
         html: htmlContent,
       });
 
-      console.log('Email sent:', info.messageId);
-      return info;
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      console.log('Email sent:', data.id);
+      return data;
     } catch (error) {
       console.error('Failed to send email:', error.message);
       throw error;
@@ -83,16 +80,19 @@ ${newPosts.map(post => `
 
   async sendTestEmail() {
     try {
-      const info = await this.transporter.sendMail({
-        from: `"Chuncheon DMAPT Scraper" <${process.env.GMAIL_USER}>`,
-        to: this.toEmail,
-        subject: '[Test] Chuncheon DMAPT Scraper',
-        text: 'This is a test email from the Chuncheon DMAPT scraper.',
-        html: '<p>This is a test email from the <strong>Chuncheon DMAPT scraper</strong>.</p>',
+      const { data, error } = await this.resend.emails.send({
+        from: `춘천 동문 디 이스트 알림이 <${this.fromEmail}>`,
+        to: [this.toEmail],
+        subject: '[Test] 춘천 동문 디 이스트 알림',
+        html: '<p>테스트 이메일입니다.</p>',
       });
 
-      console.log('Test email sent:', info.messageId);
-      return info;
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      console.log('Test email sent:', data.id);
+      return data;
     } catch (error) {
       console.error('Failed to send test email:', error.message);
       throw error;
