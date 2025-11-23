@@ -3,6 +3,8 @@ import { BoardScraper } from './scraper.js';
 import { PostStorage } from './storage.js';
 import { Mailer } from './mailer.js';
 
+const TIMEOUT_MS = 5 * 60 * 1000; // 5 minutes timeout
+
 export async function checkForNewPosts() {
   console.log('='.repeat(50));
   console.log('Starting board check...');
@@ -75,10 +77,16 @@ export async function checkForNewPosts() {
 
 // Run if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
-  checkForNewPosts()
+  // Wrap with timeout
+  Promise.race([
+    checkForNewPosts(),
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Script timeout after 5 minutes')), TIMEOUT_MS)
+    )
+  ])
     .then(() => process.exit(0))
     .catch(error => {
-      console.error('Fatal error:', error);
+      console.error('Fatal error:', error.message);
       process.exit(1);
     });
 }
