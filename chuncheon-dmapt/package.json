@@ -2,11 +2,9 @@
   "name": "chuncheon-dmapt-scraper",
   "version": "1.0.0",
   "description": "Web scraper for Chuncheon DMAPT board with email alerts",
-  "main": "src/index.js",
+  "main": "src/check.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js",
     "check": "node src/check.js"
   },
   "dependencies": {
@@ -14,7 +12,6 @@
     "axios-cookiejar-support": "^5.0.2",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
     "nodemailer": "^6.9.8",
     "tough-cookie": "^4.1.3"
   },
